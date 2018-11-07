@@ -12,4 +12,8 @@ class My_test < Minitest::Test
 		change = 2
 		assert_equal({"Penny" => 2}, coinage(change))
 	end
+	def test_nickel
+		change = 5
+		assert_equal({"Nickel" => 1}, coinage(change))
+	end
 end
