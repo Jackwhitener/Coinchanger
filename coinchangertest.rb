@@ -30,6 +30,6 @@ class My_test < Minitest::Test
 	end
 	def test_for_non_int
 		change = "horp florp"
-		assert_equal("Stop it. Get some help.", coinage(change))
+		assert_equal("You get NO change, because you tried to use this wrong. Spit on you. Ptoo.", coinage(change))
 	end
 end

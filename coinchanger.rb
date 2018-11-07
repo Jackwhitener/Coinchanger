@@ -11,7 +11,7 @@ def coinage(change)
 	pocket = {}
 	change = change.to_i
 	if change == 0
-		return "Stop it. Get some help."
+		return "You get NO change, because you tried to use this wrong. Spit on you. Ptoo."
 	elsif change > 0
 		divisors.each do |num|
 			quotient, remainder = change.divmod(num)
