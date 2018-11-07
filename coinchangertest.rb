@@ -6,6 +6,6 @@ class My_test < Minitest::Test
 	end
 	def test_penny
 		change = 1
-		assert_equal({"penny" => 1}, coinage(change))
+		assert_equal({"Penny" => 1}, coinage(change))
 	end
 end
