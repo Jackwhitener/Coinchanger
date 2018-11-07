@@ -19,4 +19,5 @@ class My_test < Minitest::Test
 	def test_dime
 		change = 10
 		assert_equal({"Dime" => 1}, coinage(change))
+	end
 end
