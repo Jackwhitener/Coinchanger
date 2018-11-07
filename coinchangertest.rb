@@ -28,4 +28,8 @@ class My_test < Minitest::Test
 		change = 99
 		assert_equal({"Halfdollars"=>1, "Quarters"=>1, "Dimes"=>2, "Pennies"=>4}, coinage(change))
 	end
+	def test_for_non_int
+		change = "horp florp"
+		assert_equal("Stop it. Get some help.", coinage(change))
+	end
 end
