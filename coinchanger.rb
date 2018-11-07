@@ -1,3 +1,3 @@
 def coinage(change)
-	{"Penny" => 1}
+	{"Penny" => change}
 end
