@@ -8,4 +8,8 @@ class My_test < Minitest::Test
 		change = 1
 		assert_equal({"Penny" => 1}, coinage(change))
 	end
+	def test_penny_two
+		change = 2
+		assert_equal({"Penny" => 2}, coinage(change))
+end
 end
