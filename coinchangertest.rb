@@ -26,10 +26,14 @@ class My_test < Minitest::Test
 	end
 	def test_ninety_nine
 		change = 99
-		assert_equal({"Halfdollars"=>1, "Quarters"=>1, "Dimes"=>2, "Pennies"=>4}, coinage(change))
+		assert_equal({"Halfdollars" => 1, "Quarters" => 1, "Dimes" => 2, "Pennies" =>4 }, coinage(change))
 	end
 	def test_for_non_int
 		change = "horp florp"
 		assert_equal("You get NO change, because you tried to use this wrong. Spit on you. Ptoo.", coinage(change))
+	end
+	def test_for_dollars
+		change = 101
+		assert_equal({"Dollars" => 1, "Pennies" => 1})
 	end
 end
