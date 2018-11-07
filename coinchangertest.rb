@@ -20,4 +20,8 @@ class My_test < Minitest::Test
 		change = 10
 		assert_equal({"Dime" => 1}, coinage(change))
 	end
+	def test_fifteen_cents
+		change = 15
+		assert_equal({"Dime" => 1, "Nickel" => 1}, coinage(change))
+	end
 end
