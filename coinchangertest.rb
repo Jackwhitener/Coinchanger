@@ -24,4 +24,8 @@ class My_test < Minitest::Test
 		change = 15
 		assert_equal({"Dimes" => 1, "Nickels" => 1}, coinage(change))
 	end
+	def test_ninety_nine
+		change = 99
+		assert_equal({"Halfdollars"=>1, "Quarters"=>1, "Dimes"=>2, "Pennies"=>4}, coinage(change))
+	end
 end
