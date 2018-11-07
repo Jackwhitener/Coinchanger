@@ -1,8 +1,9 @@
 def coinage(change)
 	coin = ""
-	divisors = [50, 25, 10, 5, 1]
+	divisors = [100, 50, 25, 10, 5, 1]
 	quotient = 0
 	remainder = 0
+	dollars = 0
 	halfdollars = 0
 	quarters = 0
 	dimes = 0
@@ -15,7 +16,10 @@ def coinage(change)
 	elsif change > 0
 		divisors.each do |num|
 			quotient, remainder = change.divmod(num)
-			if num == 50
+			if num == 100
+				coin = "Dollars"
+				dollars += quotient
+			elsif num == 50
 				coin = "Halfdollars"
 				halfdollars += quotient
 			elsif num == 25
@@ -31,7 +35,10 @@ def coinage(change)
 				coin = "Pennies"
 				pennies += quotient
 			end
-			if halfdollars > 0
+			change = remainder
+			if dollars > 0
+				pocket.merge!({coin => dollars})
+			elsif halfdollars > 0
 				pocket.merge!({coin => halfdollars})
 			elsif quarters > 0
 				pocket.merge!({coin => quarters})
@@ -42,12 +49,13 @@ def coinage(change)
 			elsif pennies > 0
 				pocket.merge!({coin => pennies})
 			end
+			dollars = 0
 			halfdollars = 0
 			quarters = 0
 			dimes = 0
 			nickels = 0
 			pennies = 0
-			change = remainder
+
 		end
 		return pocket
 	end
