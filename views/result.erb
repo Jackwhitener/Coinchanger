@@ -1,2 +1,5 @@
 You entered: <%= coin %><br>
-Your change: <%= change %>
+Your change:<br>
+<% change.each do |coinage| %>
+<%= coinage.first %>: <%= coinage.last %> <br>
+<%end%>
