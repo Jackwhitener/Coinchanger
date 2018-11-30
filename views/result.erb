@@ -14,9 +14,40 @@ body {
 <br>
 <a href="https://github.com/jackwhitener">My Github</a>
 </h1>
-You entered: <%= coin %> cents<br>
+You entered: <%= coin %> cents
 Your change:<br>
 <% change.each do |coinage| %>
-<%= coinage.first %>: <%= coinage.last %> <br>
+<%= coinage.last %>
+<% if coinage.last == 1 %>
+	<% if coinage.first == "Pennies" %>
+		Penny
+	<%elsif coinage.first == "Nickels"%>
+		Nickel
+	<%elsif coinage.first == "Dimes"%>
+		Dime
+	<%elsif coinage.first == "Quarters"%>
+		Quarter
+	<%elsif coinage.first == "Halfdollars"%>
+		Halfdollar
+	<%elsif coinage.first == "Dollars"%>
+		Dollar
+	<%end%>
+	<br>
+	<%elsif coinage.last > 1%>
+	<% if coinage.first == "Pennies" %>
+		Pennies
+	<%elsif coinage.first == "Nickels"%>
+		Nickels
+	<%elsif coinage.first == "Dimes"%>
+		Dimes
+	<%elsif coinage.first == "Quarters"%>
+		Quarters
+	<%elsif coinage.first == "Halfdollars"%>
+		Halfdollars
+	<%elsif coinage.first == "Dollars"%>
+		Dollars
+	<%end%>
 <%end%>
+<%end%>
+<br>
 <input id="buttons" type = "button" value = "Restart" onClick = "location.href='/'">
