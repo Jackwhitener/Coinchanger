@@ -8,3 +8,8 @@ post '/home' do
 	change = coinage(coin)
 	redirect '/result?coin=' + coin + '&change=' + change.to_s
 end
+get '/result' do
+coin = params[:coin]
+change = eval(params[:change])
+erb :result, locals: {coin: coin, change: change}
+end
