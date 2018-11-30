@@ -36,4 +36,8 @@ class My_test < Minitest::Test
 		change = 101
 		assert_equal({"Dollars" => 1, "Pennies" => 1}, coinage(change))
 	end
+	def test_for_million
+		change = 1203940
+		assert_equal({"Dollars"=>12039, "Quarters"=>1, "Dimes"=>1, "Nickels"=>1}, coinage(change))
+	end
 end

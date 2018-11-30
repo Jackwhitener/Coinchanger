@@ -11,7 +11,7 @@ def coinage(change)
 	pennies = 0
 	pocket = {}
 	change = change.to_i
-	if change == 0
+	if change < 1
 		return "You get NO change, because you tried to use this wrong. Spit on you. Ptoo."
 	elsif change > 0
 		divisors.each do |num|
